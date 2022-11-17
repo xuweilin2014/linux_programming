@@ -122,6 +122,10 @@ void accept_conn(int lfd, int events, void *arg) {
         return;
     }
 
+    /**
+     * do while(0) 是用来模拟 goto，因为 while(0) 是不会循环的，但是可以使用 break，当触发某一个条件时，调用 break，
+     * 则可以退出 while 循环，后面的语句就不会执行
+     */
     do {
         // 从全局数组 g_events 中找到一个空闲的元素，也就是不在红黑树上的元素
         for (i = 0; i < MAX_EVENTS; ++i) {
