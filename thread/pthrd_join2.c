@@ -8,6 +8,10 @@
 #include <pthread.h>
 #include <string.h>
 
+/**
+ * pthread_join 回收线程，线程返回值为整形
+ */
+
 void *tfn2(void *argc) {
 
     return (void *) 74;

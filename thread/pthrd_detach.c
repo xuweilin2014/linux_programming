@@ -8,6 +8,10 @@
 #include <pthread.h>
 #include <string.h>
 
+/**
+ * 线程分离示例
+ */
+
 void *call4(void *argc) {
     printf("thread: pid = %d, tid = %lu\n", getpid(), pthread_self());
 

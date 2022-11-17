@@ -8,6 +8,10 @@
 #include <pthread.h>
 #include <string.h>
 
+/**
+ * pthread_join 回收线程，线程返回值为结构体
+ */
+
 struct thrd {
     int var;
     char str[256];

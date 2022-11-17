@@ -8,6 +8,10 @@
 #include <pthread.h>
 #include <string.h>
 
+/**
+ * LINUX 互斥锁 mutex 使用示例
+ */
+
 pthread_mutex_t mutex;
 
 void *tfn5(void *argc) {

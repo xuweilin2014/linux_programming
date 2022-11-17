@@ -7,6 +7,10 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+/**
+ * 循环创建多个线程
+ */
+
 void *callback(void *argc) {
 
     int i = (int) argc;

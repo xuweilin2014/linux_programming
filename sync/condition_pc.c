@@ -29,6 +29,9 @@ void *consumer(void *p) {
     for (;;) {
         pthread_mutex_lock(&lock);
         // 头指针为空，说明没有节点
+        // pthread_cond_wait 方法和 pthread_cond_signal 方法必须要和 lock 同步使用，因为需要一种同步机制保证，condition
+        // 的检查与 wait() 操作，以及 condition 的更新与 notify() 是互斥的
+        // 使用 while 是因为线程可能因为其他原因被唤醒过来，而不是通过 signal，此时 condition 条件还没有满足
         while (head == NULL) {
             pthread_cond_wait(&has_product, &lock);
         }

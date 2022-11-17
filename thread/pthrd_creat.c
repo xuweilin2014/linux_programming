@@ -6,6 +6,10 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+/**
+ * 线程创建示例
+ */
+
 void *callback2(void *argc) {
     printf("main: pid = %d, tid = %lu\n", getpid(), pthread_self());
 

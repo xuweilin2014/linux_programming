@@ -9,6 +9,10 @@
 #include "errno.h"
 #include "sys/socket.h"
 
+/**
+ * 出错处理封装函数
+ */
+
 void perr_exit(const char *s) {
     perror(s);
     exit(-1);

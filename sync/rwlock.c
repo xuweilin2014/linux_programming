@@ -7,6 +7,10 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+/**
+ * LINUX 读写锁示例程序
+ */
+
 int counter = 0;
 pthread_rwlock_t rwlock;
 
