@@ -1,9 +1,10 @@
 #include <stdio.h>
 
-int semaphore_pc();
+int sigaction_test();
+int zoom_test();
 
 int main() {
     printf("Hello, World!\n");
-    semaphore_pc();
+    zoom_test();
     return 0;
 }

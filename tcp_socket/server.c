@@ -11,7 +11,10 @@
 
 #define SERV_PORT 9523
 
-void sys_err(const char* str);
+void sys_err(const char* str) {
+    perror(str);
+    exit(1);
+}
 
 /**
  * TCP 通信流程分析：

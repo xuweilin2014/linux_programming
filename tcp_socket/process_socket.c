@@ -19,7 +19,6 @@
 
 /**
  * 实现多进程服务器
- * @param sig
  */
 
 void recover_process(int sig) {
