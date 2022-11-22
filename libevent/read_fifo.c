@@ -13,6 +13,15 @@
 
 #define FIFO_ADDR "my_fifo"
 
+zengj/**
+ * libevent 库的安装和使用：
+ *
+ * ./configure       检查安装环境 生成 makefile 文件
+ * make              生成 .o 和可执行文件
+ * sudo make install 将必要的资源拷贝到系统指定目录
+ *
+ */
+
 // 写操作回调函数
 void read_cb(evutil_socket_t fd, short what, void *argc) {
 
