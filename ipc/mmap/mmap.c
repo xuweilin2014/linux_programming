@@ -9,6 +9,11 @@
 #include <sys/mman.h>
 #include <string.h>
 
+/**
+ * 使用 mmap 来创建一个映射区（共享内存），并且往映射区（共享内存）里面写入的内容，会被保存到映射区对应
+ * 的文件中
+ */
+
 int mmap_test() {
     char *p = NULL;
     int fd;
@@ -30,6 +35,7 @@ int mmap_test() {
         exit(1);
     }
 
+    // 往共享内存中写入的 hello mmap 会被保存到文件 fd 中
     strcpy(p, "hello mmap");
     printf("----%s-----\n", p);
 

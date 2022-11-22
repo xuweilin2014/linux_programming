@@ -10,7 +10,15 @@
 #include <string.h>
 #include <sys/wait.h>
 
-int var_mmap = 20;
+/**
+ * 父子进程使用 mmap 进程间通信，父进程先创建映射区，open(O_RDWR) mmap(MAP_SHARED)
+ * 然后指定 MAP_SHARED 权限。
+ *
+ * 下面的代码，父子进程使用 mmap 进行通信，共享内存大小是一个 int 变量，子进程往里面写入变量值，父进程会读取出对应的值，
+ * 实现共享，但是 var_global 不共享
+ */
+
+int var_global = 20;
 
 int fork_mmap() {
     int *p;
@@ -34,11 +42,11 @@ int fork_mmap() {
     pid = fork();
     if (pid == 0) {
         *p = 2000;
-        var_mmap = 1000;
-        printf("child, *p=%d, var=%d\n", *p, var_mmap);
+        var_global = 1000;
+        printf("child, *p=%d, var=%d\n", *p, var_global);
     } else {
         sleep(1);
-        printf("parent, *p=%d, var=%d\n", *p, var_mmap);
+        printf("parent, *p=%d, var=%d\n", *p, var_global);
         wait(NULL);
 
         int ret = munmap(p, 4);

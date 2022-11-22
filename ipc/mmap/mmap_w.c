@@ -10,6 +10,11 @@
 #include <string.h>
 #include <sys/wait.h>
 
+/**
+ * mmap 共享内存可以用于无血缘关系进程间的通信，两个进程打开同一个文件，创建映射区，下面的 mmap_w 往共享内存中
+ * 写入一个结构体数据，然后 mmap_r 从共享内存中读取数据，进行通信
+ */
+
 struct student {
     int id;
     char name[256];
