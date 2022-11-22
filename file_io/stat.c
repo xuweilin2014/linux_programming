@@ -8,6 +8,26 @@
 #include <pthread.h>
 #include <sys/stat.h>
 
+/**
+ * 获取文件属性，（从 inode 结构体中获取）
+ *
+ * stat/lstat 函数：int stat(const char *path, struct stat *buf);
+ *
+ * 参数：
+ *      path：文件路径
+ *      buf:（传出参数）存放文件属性，inode 结构体指针。
+ * 返回值：
+ *      成功： 0
+ *      失败： -1 errno
+ *
+ * 获取文件大小： buf.st_size
+ * 获取文件类型： buf.st_mode
+ * 获取文件权限： buf.st_mode
+ *
+ * 符号穿透：stat会，lstat不会。
+ *
+ */
+
 int stat_test() {
     struct stat sbuf;
 
