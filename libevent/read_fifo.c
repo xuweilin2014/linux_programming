@@ -13,7 +13,7 @@
 
 #define FIFO_ADDR "my_fifo"
 
-zengj/**
+/**
  * libevent 库的安装和使用：
  *
  * ./configure       检查安装环境 生成 makefile 文件
