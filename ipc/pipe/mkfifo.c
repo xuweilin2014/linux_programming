@@ -6,8 +6,12 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
+/**
+ * 下面的程序创建命名管道，命名管道可以用于无血缘关系进程之间的通信
+ */
 
 int mkfifo_pipe() {
+
     int ret = mkfifo("../ipc/testfifo", 0664);
     if (ret == -1) {
         perror("mkfifo error");

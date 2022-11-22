@@ -8,6 +8,10 @@
 #include <fcntl.h>
 #include <string.h>
 
+/**
+ * fifo 命名管道可以用于无血缘进程之间的通信，下面的程序向命名管道中写入数据
+ */
+
 // 不停的往命名管道中写入数据
 int main() {
     int fd, i;
