@@ -6,6 +6,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+/**
+ * 使用 execlp 函数执行 ps aux 命令，并且将命令执行的结果由 STDOUT_FILENO 重定向保存到 ps.txt 文件中
+ */
+
 int exec_ps() {
 
     int fd;

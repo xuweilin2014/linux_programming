@@ -6,6 +6,10 @@
 #include <unistd.h>
 #include <sys/wait.h>
 
+/**
+ * 使用 waitpid 来回收子进程，下面的程序使用 for 循环创建出 5 个子进程，然后父进程使用 waitpid 回收某一个特定子进程
+ */
+
 int waitpid_test() {
 
     int i;

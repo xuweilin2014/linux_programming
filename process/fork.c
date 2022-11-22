@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * 使用 fork 函数创建子进程
+ */
+
 int fork_test() {
     printf("before fork-1\n");
     printf("before fork-2\n");

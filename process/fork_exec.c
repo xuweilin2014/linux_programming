@@ -5,6 +5,10 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * execl 和 execlp 函数的使用，调用系统程序
+ */
+
 int fork_exec() {
     pid_t pid = fork();
     if (pid == -1) {
