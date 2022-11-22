@@ -9,7 +9,10 @@
 #include <string.h>
 
 /**
- * pthread_join 回收线程，线程返回值为结构体
+ * 函数 pthread_join(pthread_t __th, void **retval) 等待由 thread 标识的线程终止。
+ *
+ * 若 retval 为一非空指针，将会保存线程终止时返回值的拷贝，该返回值亦即线程调用 return 或 pthred_exit() 时所指定的值。
+ *
  */
 
 struct thrd {
@@ -37,6 +40,8 @@ int pthrd_join() {
         exit(1);
     }
 
+    // 使用 pthread_join 回收 tid 指定的线程，另外 retval 为 tfn 函数 return 指定的值
+    // 即 retval = tval，即 retval 被赋值为 struct thrd 结构体的指针
     ret = pthread_join(tid, (void **)&retval);
     if (ret != 0) {
         perror("pthread join error");

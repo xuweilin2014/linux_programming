@@ -9,7 +9,10 @@
 #include <string.h>
 
 /**
- * pthread_join 回收线程，线程返回值为整形
+ * 函数 pthread_join(pthread_t __th, void **retval) 等待由 thread 标识的线程终止。
+ *
+ * 若 retval 为一非空指针，将会保存线程终止时返回值的拷贝，该返回值亦即线程调用 return 或 pthred_exit() 时所指定的值。
+ *
  */
 
 void *tfn2(void *argc) {
@@ -19,7 +22,7 @@ void *tfn2(void *argc) {
 
 int pthrd_join2() {
     pthread_t tid;
-    int val;
+    int* val;
 
     int ret = pthread_create(&tid, NULL, tfn2, NULL);
     if (ret != 0) {

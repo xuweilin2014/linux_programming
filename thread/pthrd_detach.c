@@ -9,7 +9,10 @@
 #include <string.h>
 
 /**
- * 线程分离示例
+ * 线程分离示例，使用 int pthread_detach(pthread_t pid); 设置线程分离，其中 pid 表示线程号，
+ * 线程分离后，其资源在结束后会自动进行回收。
+ *
+ * 下面由于子线程已经被回收，父线程调用 pthread_join 方法获取到子线程时可能会获取到无效值
  */
 
 void *call4(void *argc) {
