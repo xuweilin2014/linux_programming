@@ -7,6 +7,11 @@
 #include <sys/wait.h>
 #include <sys/time.h>
 
+/**
+ * 下面的 setitimer 设定的时间第一次隔 2s 后向当前进程发送 SIGALRM 信号，然后每隔 5s 向当前进程发送 SIGALRM 信号
+ * 由于使用 signal 函数注册了 SIGALRM 信号的处理函数，相当于 myfunc 按照 setitimer 设定的时间间隔进行调用
+ */
+
 void myfunc(int signo) {
     printf("hello world\n");
 }
